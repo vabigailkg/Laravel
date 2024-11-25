@@ -6,9 +6,6 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
-    /**
-     * Run the migrations.
-     */
     public function up(): void // se ejecuta cuando se hace la migración
     {
         Schema::create('users', function (Blueprint $table) { // crea tabla siempre en plural
@@ -40,10 +37,7 @@ return new class extends Migration
     /**
      * Reverse the migrations.
      */
-    public function down(): void // hace un rollback (ctrl+z)
-    {
+    public function down(): void {
         Schema::dropIfExists('users');
-        Schema::dropIfExists('password_reset_tokens');
-        Schema::dropIfExists('sessions');
     }
 };

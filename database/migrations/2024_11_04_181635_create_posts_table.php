@@ -14,9 +14,13 @@ return new class extends Migration
         Schema::create('posts', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
+            $table->string('titulo');
+            $table->string('texto')->unique();            
+            $table->boolean('publicado')->nullable()->default(false);
+            $table->softDeletes();            
         });
     }
-
+    
     /**
      * Reverse the migrations.
      */
